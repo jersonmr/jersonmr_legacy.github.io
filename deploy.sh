@@ -7,6 +7,8 @@ git init
 git add -A
 git commit -m 'deploy to master'
 
+git push -f https://github.com/jersonmr/jersonmr.github.io.git master
+
 # build
 npm run build
 
@@ -21,7 +23,6 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io
-git push -f origin master
 
 git subtree push --prefix dist origin gh-pages
 
