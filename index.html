@@ -420,7 +420,7 @@
 
                     <div id="info"></div>
 
-                    <form action="#" method="POST" id="contact-form" x-data="handleForm()" x-init="init"
+                    <form action="https://formspree.io/f/xeqvodng" method="POST" id="contact-form" x-data="handleForm()" x-init="init"
                         class="grid grid-cols-1 gap-6 lg:grid-cols-2">
                         <div class="relative">
                             <input type="text"
@@ -515,22 +515,20 @@
 
         $form.addEventListener('submit', handleSubmit)
 
-        function handleSubmit(event) {
+        async function handleSubmit(event) {
             event.preventDefault()
             $spinner.classList.remove('hidden')
             $spinner.classList.add('flex')
             const form = new FormData(this)
-            /*const response = await fetch(this.action, {
+            const response = await fetch(this.action, {
                 method: this.method,
                 body: form,
                 headers: {
                     'Accept': 'application/json'
                 }
-            })*/
+            })
 
-            setTimeout(() => {
-                $spinner.classList.remove('flex')
-                $spinner.classList.add('hidden')
+            if (response.ok) {
                 const alert = document.createElement('p')
                 alert.innerHTML = `
                 <div class="relative px-6 py-4 mb-4 text-white bg-blue-500 border-0 rounded">
@@ -545,13 +543,14 @@
 
                 document.querySelector('#info').appendChild(alert)
 
+                $spinner.classList.remove('flex')
+                $spinner.classList.add('hidden')
+
                 setTimeout(() => {
                     alert.remove()
                     this.reset()
                 }, 5000)
-            }, 3000)
-            /*if (response.ok) {
-            }*/
+            }
         }
     </script>
 </body>

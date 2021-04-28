@@ -1,5 +1,9 @@
 @tailwind base;
 @tailwind components;
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     @apply text-sm lg:text-base font-body text-body;
 }
