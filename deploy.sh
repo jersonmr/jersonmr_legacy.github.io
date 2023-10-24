@@ -5,9 +5,9 @@ set -e
 
 git init
 git add -A
-git commit -m 'deploy to master'
+git commit -m 'deploy to main'
 
-git push -f https://github.com/jersonmr/jersonmr.github.io.git master
+git push -f https://github.com/jersonmr/jersonmr.github.io.git main
 
 # build
 npm run build
