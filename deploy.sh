@@ -23,7 +23,6 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io
-
 git subtree push --prefix dist origin gh-pages
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
